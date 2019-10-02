@@ -1,1 +1,2 @@
-command: echo "Deploy here!"
+- name: gene
+  command: echo "Deploy here!"
