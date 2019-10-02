@@ -9,7 +9,7 @@ use Mix.Config
 
 config :weather,
   ecto_repos: [Weather.Repo],
-  env: :dev
+  env: :prod
 
 # Configures the endpoint
 config :weather, WeatherWeb.Endpoint,

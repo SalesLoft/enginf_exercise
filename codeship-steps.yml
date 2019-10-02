@@ -1,3 +1,6 @@
-- name: gene
+- name: weathercompile
   service: weatherweb
-  command: mix phx.server
+  command: mix do compile
+#- name: weatherexecute
+#  service: weatherweb
+#  command: mix phx.server
