@@ -15,4 +15,4 @@ RUN mix local.hex --force
 # Compile the project
 RUN mix do compile
 
-CMD mix phx.server
+#CMD mix phx.server

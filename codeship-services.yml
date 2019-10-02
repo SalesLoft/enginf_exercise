@@ -1,5 +1,4 @@
-weather_web:
+weatherweb:
   build:
-    image: weather_web
+    image: enginf
     dockerfile: Dockerfile
-    
