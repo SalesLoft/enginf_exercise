@@ -2,8 +2,8 @@
   name: deployapp
   service: weatherweb
   steps:
-  - command: mix deps.get
-  - command: mix do compile
+  - command: echo one
+  - command: echo two
 #- name: compile
 #  service: weatherweb
 #  command: mix do compile
