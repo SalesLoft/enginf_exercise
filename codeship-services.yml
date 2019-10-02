@@ -1,0 +1,5 @@
+weather_web:
+  build:
+    image: weather_web
+    dockerfile: Dockerfile
+    
