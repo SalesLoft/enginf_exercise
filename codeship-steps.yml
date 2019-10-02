@@ -1,6 +1,9 @@
-- name: weathercompile
+- name: dependencies
+  service: weatherweb
+  command: mix deps.get
+- name: compile
   service: weatherweb
   command: mix do compile
-#- name: weatherexecute
+#- name: execute
 #  service: weatherweb
 #  command: mix phx.server
