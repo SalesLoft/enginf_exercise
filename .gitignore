@@ -14,3 +14,6 @@ npm-debug.log
 weather-*.tar
 
 .env
+codeship.aes
+dockercfg
+
