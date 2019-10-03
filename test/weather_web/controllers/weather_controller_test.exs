@@ -7,6 +7,22 @@ defmodule WeatherWeb.WeatherControllerTest do
   end
 
   test "GET /weather", %{conn: conn} do
-    assert 1 == 0
+    conn = get(conn, "/weather")
+    assert text_response(conn, 400) == "Missing latitude or longitude query parameters"
+  end
+
+  test "GET /weather?longitude=123", %{conn: conn} do
+    conn = get(conn, "/weather?longitude=123")
+    assert text_response(conn, 400) == "Missing latitude or longitude query parameters"
+  end
+
+  test "GET /weather?latitude=123", %{conn: conn} do
+    conn = get(conn, "/weather?latitude=123")
+    assert text_response(conn, 400) == "Missing latitude or longitude query parameters"
+  end
+
+  test "GET /weather?longitude=123&latitude=123", %{conn: conn} do
+    conn = get(conn, "/weather?longitude=123&latitude=123")
+    assert json_response(conn, 200) != nil
   end
 end

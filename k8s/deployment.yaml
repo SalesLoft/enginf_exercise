@@ -1,0 +1,22 @@
+apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
+kind: Deployment
+metadata:
+  name: weather-deployment
+spec:
+  selector:
+    matchLabels:
+      app: weatherweb
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: weatherweb
+    spec:
+      containers:
+      - name: weatherweb
+        image: vttoonses/interviews19:latest
+        env:
+          - name: dark_sky_key
+            value: "72d5acc6e6baab998a069b58c79912e5"
+        ports:
+        - containerPort: 4000

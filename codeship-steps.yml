@@ -1,20 +1,13 @@
 - type: serial
   steps:
+    - name: weathertests
+      service: weatherweb
+      command: mix test
+- type: serial
+  steps:
     - name: dockerhub_push
       service: weatherweb
       type: push
       image_name: vttoonses/interviews19
       registry: https://index.docker.io/v1/
       encrypted_dockercfg_path: dockercfg.encrypted
-#- type: serial
-#  name: deployapp
-#  service: weatherweb
-#  steps:
-#  - command: echo one
-#  - command: echo two
-#- name: compile
-#  service: weatherweb
-#  command: mix do compile
-#- name: execute
-#  service: weatherweb
-#  command: mix phx.server
