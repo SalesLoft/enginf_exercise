@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: weather-service
+spec:
+  type: LoadBalancer
+  externalIPs:
+  - 192.168.1.50
+  ports:
+  - port: 4000
+    targetPort: 4000
+    protocol: TCP
+    name: http
+  selector:
+    app: weatherweb

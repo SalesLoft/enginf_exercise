@@ -1,6 +1,8 @@
 defmodule WeatherWeb.WeatherController do
   use WeatherWeb, :controller
 
+  @dark_sky_client Application.get_env(:weather, :dark_sky_client)
+
   def index(conn, _params) do
     render(conn, "index.json", %{foo: "bar"})
   end
@@ -11,9 +13,32 @@ defmodule WeatherWeb.WeatherController do
       |> put_resp_content_type("text/plain; charset=utf8")
       |> send_resp(400, "Missing latitude or longitude query parameters")
     else
-      url = "https://api.darksky.net/forecast/#{System.fetch_env!("dark_sky_key")}/#{params["latitude"]},#{params["longitude"]}"
-      response = HTTPoison.get!(url)
-      json(conn, Poison.decode!(response.body))
+      json(conn, @dark_sky_client.get_forcast(params["latitude"], params["longitude"]))
     end
+  end
+end
+
+defmodule DarkSkyClient do
+  @callback get_forcast(String.t, String.t) :: {:ok, term}
+end
+
+defmodule RuntimeDarkSkyClient do
+  @behaviour DarkSkyClient
+
+  @impl DarkSkyClient
+  def get_forcast(latitude, longitude) do
+    url = "https://api.darksky.net/forecast/#{System.fetch_env!("dark_sky_key")}/#{latitude},#{longitude}"
+    response = HTTPoison.get!(url)
+    Poison.decode!(response.body)
+  end
+end
+
+
+defmodule TestDarkSkyClient do
+  @behaviour DarkSkyClient
+
+  @impl DarkSkyClient
+  def get_forcast(latitude, longitude) do
+    "#{longitude}, #{latitude}: Sunny"
   end
 end

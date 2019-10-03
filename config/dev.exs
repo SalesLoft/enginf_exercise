@@ -65,6 +65,9 @@ config :weather, WeatherWeb.Endpoint,
     ]
   ]
 
+config :weather,
+  dark_sky_client: RuntimeDarkSkyClient
+
 # Do not include metadata nor timestamps in development logs
 config :logger, :console, format: "[$level] $message\n"
 

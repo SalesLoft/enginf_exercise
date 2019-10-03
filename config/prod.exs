@@ -1,6 +1,8 @@
 use Mix.Config
 
-config :weather, env: :prod
+config :weather,
+  env: :prod,
+  dark_sky_client: RuntimeDarkSkyClient
 
 # For production, don't forget to configure the url host
 # to something meaningful, Phoenix uses this information

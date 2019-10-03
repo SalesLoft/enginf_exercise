@@ -23,6 +23,6 @@ defmodule WeatherWeb.WeatherControllerTest do
 
   test "GET /weather?longitude=123&latitude=123", %{conn: conn} do
     conn = get(conn, "/weather?longitude=123&latitude=123")
-    assert json_response(conn, 200) != nil
+    assert json_response(conn, 200) == "123, 123: Sunny"
   end
 end
