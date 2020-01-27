@@ -1,8 +1,8 @@
-# SalesLoft Engineering Infrastructure Exercise
+# SalesLoft Engineering Enablement Exercise
 
 SalesLoft is looking to add weather information to our app. Why? I dunno, Product Management is weird. 
 
-Anyways, we need to set up a small proxy service so that we can abstract away the provider we use behind the scenes. Engineering Infrastructure is kicking off this project so we can get all the plumbing hooked up and good to go for development to add caching, service load balancing, and other complex things. 
+Anyways, we need to set up a small proxy service so that we can abstract away the provider we use behind the scenes. Engineering Enablement is kicking off this project so we can get all the plumbing hooked up and good to go for development to add caching, service load balancing, and other complex things. 
 
 They will need:
 - The initial API
