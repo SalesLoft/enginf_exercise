@@ -23,7 +23,7 @@ No HTTP client is provided, but we like using [HTTPoison](https://github.com/edg
 
 ## Expected API
 
-Your mission, if you choose to accept it, is to get weather information from [Dark Sky's API](https://darksky.net/dev) and present it as an HTTP API. You will need to get your own API key from Dark Sky, but they are free. **Please don't commit your API key into the repository or publish it to a Docker registry!**
+Your mission, if you choose to accept it, is to get weather information from ~~[Dark Sky's API](https://darksky.net/dev)~~ (The Dark Sky API is no longer public. Please choose [an alternative](https://hackernoon.com/8-weather-api-alternatives-now-that-darksky-is-shutting-down-j8gs302e) and mention why you ended up using the option you chose.) and present it as an HTTP API. You will need to get your own API key from Dark Sky, but they are free. **Please don't commit your API key into the repository or publish it to a Docker registry!**
 
 `/weather?latitude&longitude` is the expected input for a location (e.g., `/weather?latitude=33.7984&longitude=-84.3883`). 
 
