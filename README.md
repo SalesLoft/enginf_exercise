@@ -56,7 +56,7 @@ It should return JSON with the current weather and 7 day forecast. The response 
 
 ## CI and Deployment
 
-You may use any CI system you like, as long as it works with Docker. We use [Codeship](http://codeship.com/) at SalesLoft, but it is not required.
+You may use any CI system you like, as long as it works with Docker. We use Github Actions at SalesLoft, but it is not required.
 
 For deployment, we use Kubernetes, so the app will need to run within a Docker container and you can re-use the container from the tests. We don't need to have the container image available publicly, just this repository.
 
